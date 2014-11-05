@@ -23,16 +23,18 @@
 				
 					#frame {
 
-				width: 350px;
-				height: 150px;
+				width: 630px;
+				height: 420px;
 				padding: 5px;
 				border: 2px solid black;
+				overflow: hidden;
+				
 			}
 
 			#slider-container {
 
-				width: 350px;
-				height: 150px;
+				width: 630px;
+				height: 420px;
 				position: relative;
 				overflow: hidden;
 			}
@@ -44,12 +46,18 @@
 
 			.slider-off {
 
-				left: 380px;
+				left: 640px;
 			}
 
 			.slider-back {
 
-				left: -380px;
+				left: -640px;
+			}
+				.footer {
+				color: orange;
+				font-style: italic;
+				text-align: center;
+				
 			}
 		</style>
 		<body>
@@ -95,10 +103,13 @@
 										</button>
 
 										<br />
+										
+																<div class="footer">
+																<p>The following was completed by Jonathan Gouvion Nov 2014</p>
+																</div>
 			</div>
 			<script>
-				var images = ["http://placehold.it/350x150/1&text=1", "http://placehold.it/350x150/3&text=2", "http://placehold.it/350x150/6&text=3", "http://placehold.it/350x150/9&text=4"];
-
+				var images = ["http://img.bleacherreport.net/img/slides/photos/003/531/938/hi-res-61322941c51decabca3783be182dfde0_crop_north.?w=630&h=420&q=75","http://img.bleacherreport.net/img/slides/photos/003/470/843/hi-res-7648214_crop_north.jpg?w=630&h=420&q=75", "http://img.bleacherreport.net/img/images/photos/001/886/296/hi-res-151660509_crop_north.jpg?w=630&h=420&q=75"];
 				// Array that holds images
 
 				var current_image_index = 0;
@@ -163,7 +174,7 @@
 
 						current_image.animate({
 
-							left : "-=380"
+							left : "-=640"
 
 						}, 1000, function() {// This function gets called at the end of the animation
 
@@ -201,7 +212,7 @@
 
 						current_image.animate({
 
-							left : "380"
+							left : "640"
 
 						}, 1000, function() {// This function gets called at the end of the animation
 
