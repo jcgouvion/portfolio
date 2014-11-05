@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>About</title>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 		<style>
 			body {
 			margin: auto;
@@ -19,6 +20,37 @@
 				text-decoration : none;
 				padding: 30px;
 				}
+				
+					#frame {
+
+				width: 350px;
+				height: 150px;
+				padding: 5px;
+				border: 2px solid black;
+			}
+
+			#slider-container {
+
+				width: 350px;
+				height: 150px;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.slider-img {
+
+				position: absolute;
+			}
+
+			.slider-off {
+
+				left: 380px;
+			}
+
+			.slider-back {
+
+				left: -380px;
+			}
 		</style>
 		<body>
 			<div class="body-container">
@@ -32,7 +64,176 @@
 							<li><a href="contact.html">Contact</a></li>
 							</ul>
 							</div>
+										<div id="frame">
+
+										<div id="slider-container">
+
+										<!--<img class="slider-img" src="http://placehold.it/350x150/1" />
+
+										<img class="slider-img slider-off" src="http://placehold.it/350x150/3" />
+
+										<img class="slider-img slider-off" src="http://placehold.it/350x150/6" />
+
+										<img class="slider-img slider-off" src="http://placehold.it/350x150/9" />-->
+
+										</div>
+
+										</div>
+
+										<br />
+
+										<button id="prev">
+
+										&laquo;&nbsp;Slide Left
+
+										</button>
+
+										<button id="next">
+
+										Slide Right&nbsp;&raquo;
+
+										</button>
+
+										<br />
 			</div>
+			<script>
+				var images = ["http://placehold.it/350x150/1&text=1", "http://placehold.it/350x150/3&text=2", "http://placehold.it/350x150/6&text=3", "http://placehold.it/350x150/9&text=4"];
+
+				// Array that holds images
+
+				var current_image_index = 0;
+
+				var slider_container;
+
+				function prev_image_index() {
+
+					if (current_image_index < images.length - 1) {
+
+						return current_image_index + 1;
+
+					} else {
+
+						return 0;
+
+					}
+
+				}
+
+				function next_image_index() {
+
+					if (current_image_index > 0) {
+
+						return current_image_index - 1;
+
+					} else {
+
+						return images.length - 1;
+
+					}
+
+				}
+
+				$(function() {
+
+					slider_container = $('#slider-container');
+
+					for (var i = 0; i < images.length; i++) {
+
+						var row = images[i];
+
+						var class_name = 'slider-img slider-off';
+
+						if (i == 0) {
+
+							class_name = 'slider-img';
+
+						}
+
+						var img = $('<img>').attr('src', row).addClass(class_name);
+
+						slider_container.append(img);
+
+					};
+
+					$('#prev').click(function() {
+
+						var current_image = $(slider_container.find('img.slider-img')[current_image_index]);
+
+						var prev_image = $(slider_container.find('img.slider-img')[prev_image_index()]);
+
+						current_image.animate({
+
+							left : "-=380"
+
+						}, 1000, function() {// This function gets called at the end of the animation
+
+							current_image.addClass('slider-off').attr('style', '');
+
+						});
+
+						prev_image.addClass('slider-off');
+
+						prev_image.animate({
+
+							left : "0"
+
+						}, 1000, function() {
+
+							prev_image.removeClass('slider-off').attr('stlyle', '');
+
+						});
+
+						current_image_index++;
+
+						if (current_image_index == images.length) {
+
+							current_image_index = 0;
+
+						}
+
+					});
+
+					$('#next').click(function() {
+
+						var current_image = $(slider_container.find('img.slider-img')[current_image_index]);
+
+						var next_image = $(slider_container.find('img.slider-img')[next_image_index()]);
+
+						current_image.animate({
+
+							left : "380"
+
+						}, 1000, function() {// This function gets called at the end of the animation
+
+							current_image.addClass('slider-off').attr('style', '');
+
+						});
+
+						next_image.addClass('slider-back');
+
+						next_image.animate({
+
+							left : "0"
+
+						}, 1000, function() {
+
+							next_image.removeClass('slider-off').removeClass('slider-back').attr('stlyle', '');
+
+						});
+
+						current_image_index--;
+
+						if (current_image_index == -1) {
+
+							current_image_index = images.length - 1;
+
+						}
+
+					});
+
+				});
+
+			</script>
 		</body>
 	</head>
 </html>
