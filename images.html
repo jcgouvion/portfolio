@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Images</title>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<style>
+			body {
+			margin: auto;
+			font-family: arial;
+			background-image: url('http://upload.wikimedia.org/wikipedia/commons/a/a4/Ggb_by_night.jpg');
+			}
+		
+		.nav-container {
+			text-align: center;
+		}
+		
+		
+			ul, li, a {
+				display: inline;
+				list-style-type : none;
+				text-decoration : none;
+				padding: 30px;
+				color: orange;
+				}
+				
+					#frame {
+
+				width: 630px;
+				height: 420px;
+				padding: 5px;
+				border: 2px solid black hidden;
+				overflow: hidden;
+				margin: 0 auto;
+				
+			}
+
+			#slider-container {
+
+				width: 630px;
+				height: 420px;
+				position: relative;
+				overflow: hidden;
+				margin: 0 auto;
+			}
+
+			.slider-img {
+
+				position: absolute;
+			}
+
+			.slider-off {
+
+				left: 640px;
+			}
+
+			.slider-back {
+
+				left: -640px;
+			}
+				.footer {
+				color: orange;
+				font-style: italic;
+				text-align: center;
+				
+			}
+			
+			
+		</style>
+		<body>
+			<div class="body-container">
+					<div class="header-container">
+						
+					</div>
+							<div class="nav-container">
+								<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="team_news.html">Team News</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							</ul>
+							</div>
+							<br>
+							
+										<div id="frame">
+
+										<div id="slider-container">
+
+										
+
+										</div>
+
+										</div>
+
+										<br />
+
+										<div style="text-align:center;">
+										<button id="prev">
+
+										&laquo;&nbsp;Slide Left
+
+										</button>
+
+										<button id="next">
+
+										Slide Right&nbsp;&raquo;
+
+										</button>
+										</div>
+
+										<br />
+										
+																<div class="footer">
+																<p>The following was completed by Jonathan Gouvion Nov 2014</p>
+																</div>
+			</div>
+			<script>
+				var images = ["http://img.bleacherreport.net/img/slides/photos/003/531/938/hi-res-61322941c51decabca3783be182dfde0_crop_north.?w=630&h=420&q=75","http://img.bleacherreport.net/img/slides/photos/003/324/494/hi-res-177674993_crop_north.jpg?w=630&h=420&q=75","http://img.bleacherreport.net/img/slides/photos/003/470/843/hi-res-7648214_crop_north.jpg?w=630&h=420&q=75", "http://img.bleacherreport.net/img/images/photos/001/886/296/hi-res-151660509_crop_north.jpg?w=630&h=420&q=75"];
+				// Array that holds images
+
+				var current_image_index = 0;
+
+				var slider_container;
+
+				function prev_image_index() {
+
+					if (current_image_index < images.length - 1) {
+
+						return current_image_index + 1;
+
+					} else {
+
+						return 0;
+
+					}
+
+				}
+
+				function next_image_index() {
+
+					if (current_image_index > 0) {
+
+						return current_image_index - 1;
+
+					} else {
+
+						return images.length - 1;
+
+					}
+
+				}
+
+				$(function() {
+
+					slider_container = $('#slider-container');
+
+					for (var i = 0; i < images.length; i++) {
+
+						var row = images[i];
+
+						var class_name = 'slider-img slider-off';
+
+						if (i == 0) {
+
+							class_name = 'slider-img';
+
+						}
+
+						var img = $('<img>').attr('src', row).addClass(class_name);
+
+						slider_container.append(img);
+
+					};
+
+					$('#prev').click(function() {
+
+						var current_image = $(slider_container.find('img.slider-img')[current_image_index]);
+
+						var prev_image = $(slider_container.find('img.slider-img')[prev_image_index()]);
+
+						current_image.animate({
+
+							left : "-=640"
+
+						}, 1000, function() {// This function gets called at the end of the animation
+
+							current_image.addClass('slider-off').attr('style', '');
+
+						});
+
+						prev_image.addClass('slider-off');
+
+						prev_image.animate({
+
+							left : "0"
+
+						}, 1000, function() {
+
+							prev_image.removeClass('slider-off').attr('stlyle', '');
+
+						});
+
+						current_image_index++;
+
+						if (current_image_index == images.length) {
+
+							current_image_index = 0;
+
+						}
+
+					});
+
+					$('#next').click(function() {
+
+						var current_image = $(slider_container.find('img.slider-img')[current_image_index]);
+
+						var next_image = $(slider_container.find('img.slider-img')[next_image_index()]);
+
+						current_image.animate({
+
+							left : "640"
+
+						}, 1000, function() {// This function gets called at the end of the animation
+
+							current_image.addClass('slider-off').attr('style', '');
+
+						});
+
+						next_image.addClass('slider-back');
+
+						next_image.animate({
+
+							left : "0"
+
+						}, 1000, function() {
+
+							next_image.removeClass('slider-off').removeClass('slider-back').attr('stlyle', '');
+
+						});
+
+						current_image_index--;
+
+						if (current_image_index == -1) {
+
+							current_image_index = images.length - 1;
+
+						}
+
+					});
+
+				});
+
+			</script>
+		</body>
+	</head>
+</html>
