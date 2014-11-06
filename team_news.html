@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>49ers News</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<style>
 			body {
 				margin: auto;
@@ -15,7 +16,7 @@
 				text-decoration: none;
 				display: inline;
 				padding: 25px;
-				color: white;
+				color: orange;
 				
 			}
 			
@@ -57,6 +58,10 @@
 				color: orange;
 				font-style: italic;
 				
+			}
+			
+			.button {
+				margin: 0 auto;
 			}
 		</style>
 	</head>
@@ -110,7 +115,12 @@
 											</ul>
 											</div>
 											</div>
+													
 							</div>
+														<div class="button">
+														<button class="btn1">Hide</button>
+														<button class="btn2">Show</button>
+													</div>
 							
 									<div class="footer">
 										<p>The following was completed by Jonathan Gouvion Nov 2014</p>
@@ -118,7 +128,14 @@
 		
 		</div>
 		<script>
-			
+			$(document).ready(function(){
+ 			 $(".btn1").click(function(){
+  			$("ol").hide();
+  			});
+  			$(".btn2").click(function(){
+ 			 $("ol").show();
+ 			 });
+			});
 		</script>
 	</body>
 </html>
