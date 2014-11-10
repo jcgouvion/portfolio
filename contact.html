@@ -1,126 +1,171 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<title>Contact</title>
 		<style>
-		
-	
 			body {
-			margin: auto;
-			font-family: arial;
-			background-color: red;
+				margin: auto;
+				font-family: arial;
+				background-color: red;
 			}
-		
-		.nav-container {
-			text-align: center;
-		}
-		
-		
+
+			.nav-container {
+				text-align: center;
+			}
+
 			ul, li, a {
 				display: inline;
-				list-style-type : none;
-				text-decoration : none;
+				list-style-type: none;
+				text-decoration: none;
 				padding: 30px;
-				
-				}
-				
-				.right-body {
-					position: absolute;
-					top: 65px;
-					right: 150px;
-					font-size: 20px;
-				}
-				
-				#button {
-					color: white;
-					background-color: blue;
-					font-size: 15px;
-					
-				}
-				.footer {
+			}
+
+			.right-body {
+				position: absolute;
+				top: 162px;
+				right: 200px;
+				font-size: 20px;
+				/*border: 1px solid;*/
+			}
+
+			#button {
+				color: white;
+				background-color: blue;
+				font-size: 15px;
+			}
+			.footer {
 				color: orange;
 				font-style: italic;
 				text-align: center;
+			}
+			#pic {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			#nav, #flip {
+				padding: 5px;
+				text-align: center;
+				background-color: #e5eecc;
+				border: solid 1px #c3c3c3;
+			}
+			#nav {
+				padding: 50px;
+				display: none;
+			}
+			.left-body {
+				/*border: 1px solid;*/
 				
 			}
-				#pic {
-					display: block;
-					margin-left: auto;
-					margin-right: auto;
-					
-				}
-			
+
 		</style>
 	</head>
-		<body>
-			<div class="body-container">
-					<div class="header-container">
-					
-					</div>
-					<br>
-							<div class="nav-container">
-								<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="team_news.html">Team News</a></li>
-							<li><a href="images.html">Images</a></li>
-							<li><a href="about.html">About</a></li>
-						</ul>
-							</div>
-							<br>
-									<div class="body">
-										
-											<div class="left-body">
-												<h1>Contact US and become LEGENDARY</h1>
-												<h2>For all your inquiries, please fill out the<br>contact form and we will be in touch with<br>you soon.</h2>
-												<h3>You may also send me an email at JCGOUVION@gmail.com.<br>Please include a subject line in your email</h3>
-												
-												<h4>You may also follow me on LinkedIn and Github</h4>
-												<h4><a href="http://www.linkedin.com/pub/jonathan-gouvion/73/695/611">Add me to LinkedIn</a></h4>
-												<h5>All inquires will be answered in 24 hours</h5>
-											</div>
-											
-														<div class="right-body">
-														<form role="form">
-													    <div class="form-group">
-  														  <label for="exampleInputName1">Name</label><br>
-   														 <input type="email" class="form-control" id="" placeholder="Enter Name">
-  														</div>
-  														<div class="form-group">
-   														 <label for="exampleInputEmail1">Email</label><br>
-   														 <input type="email" class="form-control" id="" placeholder="Enter email">
- 														 </div>
- 														 <div class="form-group">
-   														 <label for="exampleInputEmail1">Phone number</label><br>
-   														 <input type="phone" class="form-control" id="" placeholder="phone number">
- 														 </div>
- 														 <div class="form-group">
-   														 <label for="exampleInputMessage1">Message</label>
-   														 <br>
-   														 <textarea class="form-control" rows="5"></textarea>
- 														 </div>
- 														
-   														 
- 														 
- 														 <div class="checkbox">
-  														  <label>
-    													  <input type="checkbox">Subscirbe to our news letter?
-    													</label>
-  														</div>
-  														<button id="button">Send</button>
-														</form>
-														</div>
-														<br>
-														
-														<img id="pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpVX9j1PTciHPHGc0Qh0RkOqFmsKsPww-IZKWFY04H8ac70Kan">
-														
-														
-														
-																<div class="footer">
-																<p>The following was completed by Jonathan Gouvion Nov 2014</p>
-																</div>
-		
-									</div>
+	<body>
+		<div class="body-container">
+			<div class="header-container">
+
 			</div>
-		</body>
-	
+			<div id="flip">Cick me for the navigation bar</div>
+			<div id="nav">
+			<br>
+			
+				<ul>
+					<li>
+						<a href="index.html">Home</a>
+					</li>
+					<li>
+						<a href="team_news.html">Team News</a>
+					</li>
+					<li>
+						<a href="images.html">Images</a>
+					</li>
+					<li>
+						<a href="about.html">About</a>
+					</li>
+				</ul>
+			</div>
+			<br>
+			<br>
+			<br>
+			
+			<div class="body">
+
+				<div class="left-body">
+					<h1>Contact US and become LEGENDARY</h1>
+					<h2>For all your inquiries, please fill out the
+					<br>
+					contact form and we will be in touch with
+					<br>
+					you soon.</h2>
+					<h3>You may also send me an email at JCGOUVION@gmail.com.
+					<br>
+					Please include a subject line in your email</h3>
+
+					<h4>You may also follow me on LinkedIn and Github</h4>
+					<h4><a href="http://www.linkedin.com/pub/jonathan-gouvion/73/695/611">Add me to LinkedIn</a></h4>
+					<h5>All inquires will be answered in 24 hours</h5>
+				</div>
+
+				<div class="right-body">
+					<form role="form">
+						<div class="form-group">
+							<label for="exampleInputName1">Name</label>
+							<br>
+							<input type="email" class="form-control" id="" placeholder="Enter Name">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Email</label>
+							<br>
+							<input type="email" class="form-control" id="" placeholder="Enter email">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Phone number</label>
+							<br>
+							<input type="phone" class="form-control" id="" placeholder="phone number">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputMessage1">Message</label>
+							<br>
+							<textarea class="form-control" rows="5"></textarea>
+						</div>
+
+						<div class="checkbox">
+							<label>
+								<input type="checkbox">
+								Subscirbe to our news letter? </label>
+						</div>
+						<button id="button">
+							Send
+						</button>
+					</form>
+				</div>
+				<br>
+				<br>
+				<br>
+
+				<img id="pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpVX9j1PTciHPHGc0Qh0RkOqFmsKsPww-IZKWFY04H8ac70Kan">
+
+				<div class="footer">
+					<p>
+						The following was completed by Jonathan Gouvion Nov 2014
+					</p>
+				</div>
+
+			</div>
+		</div>
+		<script>
+			$(document).ready(function() {
+				$("#flip").click(function() {
+					$("#nav").slideDown("slow");
+				});
+			});
+			$(document).ready(function(){
+ 			 $("#flip").click(function(){
+  		  $("#nav").slideUp("slow");
+ 			 });
+			});
+		</script>
+	</body>
+
 </html>
