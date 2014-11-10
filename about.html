@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>About</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<style>
 			body {
 			margin: auto;
@@ -60,6 +61,16 @@
 			#headline {
 				color: white;
 			}
+			#nav, #flip {
+				padding: 5px;
+				text-align: center;
+				background-color: orange;
+				/*border: solid 1px #c3c3c3;*/
+			}
+			#nav {
+				padding: 50px;
+				display: none;
+			}
 		</style>
 	</head>
 	<body>
@@ -68,16 +79,18 @@
 					
 				</div>
 				<br>
-					<div class="nav-container">
-						<ul>
+						<div id="flip">Navigate Me
+						</div>
+						<div id="nav">
+							<ul>
 							<li><a href="index.html">Home</a></li>
 							<li><a href="team_news.html">Team News</a></li>
 							<li><a href="images.html">Images</a></li>
 							<li><a href="contact.html">Contact</a></li>
 							</ul>
-					</div>
+							</div>
 					<br>
-							
+							<br>
 							<div class="body">
 								<div class="body-right">
 								<h1 id="headline">From the mortgage industry to front-end web development, the story about the man behind the website</h1>
@@ -113,8 +126,19 @@
 										
 																<div class="footer">
 																<p>Jonathan Gouvion Nov 2014</p><br>
-																<p>Sorry Alex Smith</p>
+																<p>Sorry Alex</p>
 																</div>
 		</div>
+		<script>
+			
+			
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#nav").slideToggle("slow");
+  });
+});
+</script>
+		
+		
 	</body>
 </html>

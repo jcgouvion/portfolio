@@ -50,8 +50,8 @@
 			#nav, #flip {
 				padding: 5px;
 				text-align: center;
-				background-color: #e5eecc;
-				border: solid 1px #c3c3c3;
+				background-color: orange;
+				/*border: solid 1px #c3c3c3;*/
 			}
 			#nav {
 				padding: 50px;
@@ -70,7 +70,7 @@
 			<div class="header-container">
 
 			</div>
-			<div id="flip">Cick me for the navigation bar</div>
+			<div id="flip">Navigate Me</div>
 			<div id="nav">
 			<br>
 			
@@ -137,7 +137,7 @@
 						<div class="checkbox">
 							<label>
 								<input type="checkbox">
-								Subscirbe to our news letter? </label>
+								Subscirbe to our news letter?</label>
 						</div>
 						<button id="button">
 							Send
@@ -158,18 +158,15 @@
 
 			</div>
 		</div>
-		<script>
-			$(document).ready(function() {
-				$("#flip").click(function() {
-					$("#nav").slideDown("medium");
-				});
-			});
-			$(document).ready(function(){
- 			 $("#flip").click(function(){
-  		  $("#nav").slideUp("slow");
- 			 });
-			});
-		</script>
+				<script>
+			
+			
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#nav").slideToggle("slow");
+  });
+});
+</script>
 	</body>
 
 </html>
