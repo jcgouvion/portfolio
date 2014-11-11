@@ -20,7 +20,7 @@
 				list-style-type : none;
 				text-decoration : none;
 				padding: 30px;
-				color: orange;
+				color: black;
 				}
 				
 				
@@ -68,7 +68,18 @@
 			
 			.text {
 				text-align: center;
-				color: orange
+				color: orange;
+			}
+				#nav, #flip {
+				padding: 5px;
+				text-align: center;
+				background-color: orange;
+				text: black;
+				/*border: solid 1px #c3c3c3;*/
+			}
+			#nav {
+				padding: 50px;
+				display: none;
 			}
 		</style>
 		<body>
@@ -76,7 +87,10 @@
 					<div class="header-container">
 						
 					</div>
-							<div class="nav-container">
+					<br>
+					<div id="flip">Navigate Me
+						</div>
+							<div id="nav">
 								<ul>
 							<li><a href="index.html">Home</a></li>
 							<li><a href="team_news.html">Team News</a></li>
@@ -256,6 +270,12 @@
 					});
 
 				});
+				
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#nav").slideToggle("slow");
+  });
+});
 
 			</script>
 		</body>
