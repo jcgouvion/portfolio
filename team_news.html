@@ -153,6 +153,7 @@
 														</div>
 													<br>
 													<br>
+													<div id="standing">
 													<p><em><u>Overall Standings</u></em></p>	
 													<table border="1" style="width:100%">
 			<tr>
@@ -461,7 +462,9 @@
 				<td>27-24</td>
 				<td>SF +5.5</td>
 			</tr>
-		</table>		
+		</table>	
+		</div>	
+		<button id="standing-button">Hit me</button>
 													
 							</div>
 														
@@ -487,6 +490,16 @@ $(document).ready(function(){
     $("#nav").slideToggle("slow");
   });
 });
+
+$(document).ready(function(){
+  $("#standing-button").click(function(){
+    $("#standing").animate({
+      height:'toggle'
+    });
+  });
+});
+</script> 
+</head>
 </script>
 
 
