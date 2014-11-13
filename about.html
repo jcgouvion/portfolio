@@ -74,6 +74,11 @@
 			p {
 				text-indent: 5px;
 			}
+			
+			button {
+				position: relative;
+				left: 31px;
+			}
 		</style>
 	</head>
 	<body>
@@ -100,7 +105,7 @@
 								<p>If you don't already know, my name is Jonathan Gouvion. I graduated from UC-Irvine with a degree in Criminology<br>The once inspiring attorney at twenty-one, who became a banking professional at twenty-three<br>found his calling at twenty-nine and hasn't looked back.<br>
 									<p>I've spent the last six years in the financial industry with the last two years in the mortgage indusrty.<br> I was always curious to learn how to code, but I made it a reality after learning<br> to code on Code Academy and attending Learning Fuze in Irvine, Ca.</p>
 								<p>I spent the last three months learning to code and will also take a 8 week Javascript course starting<br>on November 10th. I love learning to code and problem solve. While attending Learning Fuze, I worked with<br></p>
-								<ul>
+								<ul id="list">
 									<ol>HTML</ol>
 									<ol>CSS</ol>
 									<ol>Photoshop</ol>
@@ -108,6 +113,7 @@
 									<ol>PHP/MYSQL</ol>
 									<ol>AJAX</ol>
 									<ol>Bootstrap</ol>
+									<button>Click Me Please!</button>
 								</ul>
 								<p>As I continute to develop my skills, I will continue to make web designs on my github account.<br> I welcome any comments on how to simplify my code and how to make my pages more interactive.</p>
 								<p>If you're currently looking for a junior web developer, who has awful dance moves and<br> is a Angels/49ers/Lakers apologist, I am your man!</p>
@@ -138,6 +144,17 @@ $(document).ready(function(){
     $("#nav").slideToggle("slow");
   });
 });
+
+$(document).ready(function()
+  {
+  $("button").click(function(){
+    $("#list").css("color","gold")
+      .slideUp(2000)
+      .slideDown(2000);
+  });
+});
+
+
 </script>
 		
 		
